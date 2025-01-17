@@ -3,10 +3,12 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
+import matplotlib.font_manager as fm
 from matplotlib import rc
 
-# 한글 폰트 설정
-rc('font', family='NanumGothic')
+font_path = "NanumGothic-Regular.ttf"
+font_prop = fm.FontProperties(fname=font_path)
+rc('font', family=font_prop.get_name())  # 폰트를 Matplotlib에 적용
 
 # Streamlit 앱 시작
 st.title("대학교 정책 비교 도구")
